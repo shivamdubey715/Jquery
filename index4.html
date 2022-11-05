@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insert content into an element</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {   //Remove the container elements current HTML   
+            $('#container').html("<p>I have replaced the all the HTML within the #container element</p>");   //Add some more HTML to the beginning of the container element   
+            $('#container').prepend("<p>Another paragraph that has been prepended.</p>");   //Add a button to the end of the container element after all other HTML content   
+            $('#container').append("<button>A Button Appended</button>");   //Add some text into the text area element   
+            $('#myTextarea').val("Added some text using .text()");
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="container">
+        <p>Here is some current HTML content</p>
+    </div><textarea id="myTextarea"></textarea>
+</body>
+
+</html>

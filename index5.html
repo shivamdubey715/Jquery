@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Modifying DOM element attributes and properties</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function(){
+            // sets the checkbox to be checked
+            $('input[type="checkbox"]').prop('checked', true);
+
+            // sets the checked checkbox to be disabled
+            $('input[type="checkbox"]').prop('disabled', true);
+
+            // change the value of any text inputs
+            $('input[type="checkbox"]').val("This is a new value");
+        })
+    </script>
+</head>
+
+<body><input type="checkbox" />
+    <input type="text" />
+</body>
+
+</html>
