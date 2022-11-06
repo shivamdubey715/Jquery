@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Populating list elements</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script type="text/javascript">
+        var names = [
+            {
+                id: 1,
+                firstname: 'Leon',
+                lastname: 'Revill'
+            },
+            {
+                id: 2,
+                firstname: 'Allyce',
+                lastname: 'Wolverson'
+            },
+            {
+                id: 3,
+                firstname: 'Harry',
+                lastname: 'Round'
+            },
+            {
+                id: 4,
+                firstname: 'Chris',
+                lastname: 'Wilshaw'
+            }];
+        $(function () {
+            $.each(names, function (index, obj) {
+                $('#namelist').append("<li>#" + obj.id + " " + obj.firstname + " " + obj.lastname + "</li>");
+            });
+
+        });   
+    </script>
+</head>
+
+<body>
+    <ul id="namelist"></ul>
+</body>
+
+</html>

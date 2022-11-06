@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add and remove CSS classes to dynamically change their style</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function(){
+
+            // Listen for a click event on green button
+            $('#green-btn').click(function(){   
+                // When green button has been clicked 
+                // Remove all the classes currently on #sometext
+                $('#sometext').removeClass();
+                // Add green class to the #sometext
+                $('#sometext').addClass('green');
+            })
+
+            // Listen for a click event on red button
+            $('#red-btn').click(function(){
+                // When red button has been clicked 
+                // Remove all the classes currently on #sometext
+                $('#sometext').removeClass();
+                // Add red class to the #sometext
+                $('#sometext').addClass('red');
+            })
+
+            // Listen for a click event on yellow button
+            $('#yellow-btn').click(function(){
+                // When yellow button has been clicked 
+                // Remove all the classes currently on #sometext
+                $('#sometext').removeClass();
+                // Add yellow class to the #sometext
+                $('#sometext').addClass('yellow');
+            })
+        })
+    </script>
+    <style type="text/css">
+        .green {
+            background-color: #008000;
+            color: #FFFFFF;
+        }
+
+        .red {
+            background-color: #FF0000;
+            color: #FFFFFF;
+        }
+
+        .yellow {
+            background-color: #FFFF00;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="sometext"> Here is some text that can have different styles applied to it dynamically</p> <button
+        id="green-btn">Green</button> <button id="red-btn">Red</button> <button id="yellow-btn">Yellow</button>
+</body>
+
+</html>

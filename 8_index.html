@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change an image source and tackle browser caching to ensure it is always updated</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>  
+        $(function(){
+            $('#red-btn').click(function(){
+                $('#square').prop('src', "images/red.jpg");
+            })
+            $('#green-btn').click(function(){
+                $('#square').prop('src', "images/green.jpg");
+            })
+            $('#blue-btn').click(function(){
+                $('#square').prop('src', "images/blue.jpg");
+            })
+            $('#black-btn').click(function(){
+                $('#square').prop('src', "images/black.jpg");
+            })
+        })
+    </script>
+</head>
+
+<body> 
+    <img alt="Photo" src="" id="square" style="width: 50%; height: 50%;" />
+    <div> 
+        <button id="red-btn">Red</button> 
+        <button id="green-btn">Green</button> 
+        <button id="blue-btn">Blue</button>
+        <button id="black-btn">Black</button>
+    </div>
+</body>
+
+</html>

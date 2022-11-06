@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 1 :: DOM Manipulation</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        var animals = [
+            {
+                id: 1,
+                name: 'Dog',
+                type: 'Mammal'
+            },
+            {
+                id: 2,
+                name: 'Cat',
+                type: 'Mammal'
+            },
+            {
+                id: 3,
+                name: 'Goat',
+                type: 'Mammal'
+            },
+            {
+                id: 4,
+                name: 'Lizard',
+                type: 'Reptile'
+            },
+            {
+                id: 5,
+                name: 'Frog',
+                type: 'Amphibian'
+            },
+            {
+                id: 6,
+                name: 'Spider',
+                type: 'Arachnid'
+            },
+            {
+                id: 7,
+                name: 'Crocodile',
+                type: 'Reptile'
+            },
+            {
+                id: 8,
+                name: 'Tortoise',
+                type: 'Reptile'
+            },
+            {
+                id: 9,
+                name: 'Barracuda',
+                type: 'Fish'
+            },
+            {
+                id: 10,
+                name: 'Sheep',
+                type: 'Mammal'
+            },
+            {
+                id: 11,
+                name: 'Lion',
+                type: 'Mammal'
+            },
+            {
+                id: 12,
+                name: 'Seal',
+                type: 'Mammal'
+            }];
+        var pageSize = 4;
+        var currentPage = 1;
+        var pagedResults = [];
+        var totalResults = animals.length;
+        $(function () {
+            //Populate the list on load
+            updateList();
+            $('.next').click(function () {//Only increase the current page if there are enough results
+                if ((currentPage * pageSize) <= totalResults) currentPage++; updateList();
+            });
+            $('.previous').click(function () {//Only decrease the current page if it is currently greater than 1
+                if (currentPage > 1) currentPage--; updateList();
+            });
+        });
+        function updateList() {
+            var end = currentPage * pageSize;
+            var start = end - pageSize;
+            pagedResults = animals.slice(start, end);
+        }
+        $('#list').empty();
+        if (currentPage <= 1) {
+            $('.previous').prop("disabled", true);
+        }
+        else {
+            $('.previous').prop("disabled", true);
+        }
+        if (currentPage >= totalResults) {
+            $('.next').prop("disabled", true);
+        }
+        else {
+            $('.previous').prop("disabled", false);
+        }
+        $.each(pagedResults, function (index, obj) {
+            $('#list').append("<li><strong>" + obj.name + "</strong> (" + obj.type + ")</li>");
+        });          
+    </script>
+</head>
+
+<body>
+    <ul id="list"></ul>
+    <button class="previous">
+         Previous</button>
+            <button class="next">Next >></button>
+</body>
+
+</html>

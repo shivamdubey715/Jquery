@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Removing DOM elements</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>   
+        $(function(){
+            // Listen for a click on any of the remove button
+            $('.remove-btn').click(function(){
+                // When a remove button has been clicked
+                // Select this buttons parent (li) ans remove it
+                $(this).parent().remove();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <ul id="list">
+        <li>Item 1 <button class="remove-btn">X</button></li>
+        <li>Item 2 <button class="remove-btn">X</button></li>
+        <li>Item 3 <button class="remove-btn">X</button></li>
+        <li>Item 4 <button class="remove-btn">X</button></li>
+    </ul>
+</body>
+
+</html>

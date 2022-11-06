@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enable and disable buttons by changing their properties </title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            // Listen for a keyup event on a search input
+            $('#search-input').keyup(function () {
+                //When a user presses and releases a key     
+                //Check to see if the length of the inputted      
+                //data is greater than 2 
+                if ($(this).val().length > 2) {
+                    //If the input length is greater than
+                    //two then we enable the search button
+                    $('#search-btn').prop('disabled', false);
+                }
+                else {
+                    //If the input length is equal to or less than 2 then we disable the search button
+                    $('#search-btn').prop('disabled', true);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="search-input" />
+    <button id="search-btn" disabled>Search</button>
+</body>
+
+</html>
