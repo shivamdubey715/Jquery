@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reusing DOM elements</title>
+    <style type="text/css">
+        .one {
+            background-color: #CCC;
+            color: #333;
+        }
+
+        .two {
+            background-color: lawngreen;
+            color: white;
+        }
+
+        .three {
+            background-color: darkgreen;
+            color: white;
+        }
+
+        .four {
+            background-color: black;
+            color: #666;
+        }
+
+        .dinosaur {
+            background-color: darkred;
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        var animals = [{
+            id: 1,
+            name: 'Dog',
+            type: 'Mammal',
+            class: 'one'
+        }, {
+
+            id: 2,
+            name: 'Cat',
+
+            type: 'Mammal',
+            class: 'one'
+        }, {
+            id: 3,
+            name: 'Goat',
+            type: 'Mammal',
+            class: 'one'
+        }, {
+            id: 4,
+            name: 'Lizard',
+            type: 'Reptile',
+            class: 'two'
+        }, {
+            id: 5,
+            name: 'Frog',
+            type: 'Amphibian',
+            class: 'three'
+        }, {
+            id: 6,
+            name: 'Spider',
+            type: 'Arachnid',
+            class: 'four'
+        }];
+        $(function () {
+            $.each(animals, function (index, obj) {
+                //Clone the first element in the animal list
+                var listTemplate = $('#animal-list li').first().clone();//Change its name to match this objects name
+                listTemplate.find('.name').html(obj.name);//Changes its type to match this objects type
+                listTemplate.find('.type').html(obj.type);//Remove all its current classes
+                listTemplate.removeClass();//Add the class from this object
+                listTemplate.addClass(obj.class);//Append the modified element to the end of the list
+                $('#animal-list').append(listTemplate);});
+            });   
+    </script>
+</head>
+
+<body>
+    <ul id="animal-list">
+        <li class='dinosaur'><strong><span class='name'>T- Rex</span></strong> <span class='type'>Dinosaur</span></li>
+    </ul>
+</body>
+
+</html>
