@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 2 :: jQuery Events</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>    
+        $(function(){
+            $('.myInput').keyup(function(){
+                $('#myList').append("<li>Key Up!</li>");
+            })
+            $('.myInput').keydown(function(event){
+                $('#myList').append("<li>Key Down!</li>");
+                if(event.which == 13){
+                    $('#myList').append("<li>Enter key is pressed!</li>");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body><input type="text" class="myInput" />
+    <ul id="myList"></ul>
+</body>
+
+</html>

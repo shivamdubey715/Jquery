@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 2 :: jQuery Events</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            $('.colourme').on("switchColour", function (event, colour, text) {
+                $(this).html(text);
+                $(this).css("color", colour);
+            });
+            $("button").click(function () {
+                var colour = $(this).attr("rel");
+                $('.colourme').trigger("switchColour", colour, colour + ' button pressed... ');
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <button rel="green">Green</button>
+    <button rel="blue">Blue</button>
+    <p class="colourme"></p>
+</body>
+
+</html>

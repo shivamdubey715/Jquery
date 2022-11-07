@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 2 :: jQuery Events</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>    
+        $(function(){
+            $('.myInput').keypress(function(event){
+                // We can enter only value between a to z / A to Z / 0 to 9
+                // Special characters not allowed to enter
+                var regex = new RegExp("^[a-zA-Z0-9]+$");
+                var key = String.fromCharCode(event.which);
+                if(!regex.test(key)){
+                    return false;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body><input type="text" class="myInput" /></body>
+
+</html>

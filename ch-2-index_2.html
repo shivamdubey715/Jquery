@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 2 :: jQuery Events</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            $('#names').change(function () {
+                var newValue = $(this).val();
+                alert("Input value changed to: " + newValue);
+            });
+            $('#cat').change(function () {
+                var newValue = $(this).val();
+                alert("Input value changed to: " + newValue);
+            });
+        });
+    </script>
+</head>
+
+<body><select id="names">
+        <option value="Leon">Leon</option>
+        <option value="Allyce">Allyce</option>
+        <option value="Jane">Jane</option>
+    </select><input type="text" value="The large cat sat on the mat" id="cat" /></body>
+
+</html>

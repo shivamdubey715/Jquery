@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 2 :: jQuery Events</title>
+    <style type="text/css">
+        .info {
+            width: 530px;
+            border: solid 2px rgb(50, 15, 116);
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>    
+        $(function(){
+            $('.hoverinfo').mouseover(function(){
+                $('.info').html($(this).attr("rel"));
+                $('.info').fadeIn();
+            }).mouseleave(function(){
+                $('.info').hide();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <label>Your Name:</label>
+    <input type="text" name="name" class="hoverinfo" rel="Please provide us with your name." />
+    <label>Your Email:</label>
+    <input type="text" name="email" class="hoverinfo" rel="Please provide us with your email address" />
+    <button class="hoverinfo" rel="Click here to submit your information to us">Submit</button>
+    <div class="info"></div>
+</body>
+
+</html>

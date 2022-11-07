@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chapter 2 :: jQuery Events</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>    
+        $(function(){
+            $('.submit-btn').on('click', function(){
+                // Prevents the default action of the current event; in this case, the form submission.
+                event.preventDefault();
+                // Will prevent the event from bubbling up through the parent and ancestor DOM elements
+                event.stopPropagation();
+                var response = confirm("Are you sure you want to submit the form");
+                if(response){
+                    $('#myForm').submit();
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form method="POST" id="myForm">
+        <label>First Name:</label>
+        <input type="text" name="firstname" />
+        <label>Last
+            Name:</label>
+        <input type="text" name="lastname" />
+        <label>Your Email:</label>
+        <input type="text" name="email" />
+        <button class="submit-btn">Submit</button>
+    </form>
+</body>
+
+</html>
