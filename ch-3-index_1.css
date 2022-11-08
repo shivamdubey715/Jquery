@@ -1,0 +1,25 @@
+.left{
+    width: 200px;
+    background-color: #ccc;
+    float: left;
+    height: 100px;
+    text-align: center;
+    font-size: 25px;
+    padding: 40px 10px 10px 10px;
+}
+.right{
+    width: 300px;
+    float: left;
+    margin-left: 10px;
+    background-color: #333;
+    color: #fff;
+    height: 120px;
+    font-size: 20px;
+    position: relative;
+    padding: 20px 10px 10px 10px;
+}
+.refresh{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}

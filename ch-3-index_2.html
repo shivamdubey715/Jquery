@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3 :: AJAX and JSON</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+            $('#makeRequest').click(function () {
+                $.ajax({
+                    url: 'i-do-not-exit.html',
+                    type: 'GET'
+                }).done(function (data) {
+                    // Will not succed as no file exists
+                })
+            })
+            $(document).ajaxError(function (event, request, settings) {
+                alert("Error trying to reach " + settings.url + " ERROR CODE: " + request.status + " ERROR MESSAGE: " + request.statusText)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="makeRequest">Make AJAX request</button>
+</body>
+
+</html>
