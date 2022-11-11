@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3 :: AJAX & JSON</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        var people = [
+            {
+                title: "Mr",
+                firstname: "Shivam",
+                lastname: "Dubey"
+            },
+            {
+                title: "Mrs",
+                firstname: "Shubham",
+                lastname: "Dubey"
+            },
+            {
+                title: "Sir",
+                firstname: "Chandan",
+                lastname: "Dubey"
+            },
+            {
+                title: "Sir",
+                firstname: "Kajal",
+                lastname: "Dubey"
+            }
+        ];
+        function findObject(parameter, value, object){
+            var matches = [];
+            for(var i in object){
+                if(typeof object[i] == 'object'){
+                    matches = matches.concat(findObject(parameter, value, object[i]));
+                }
+                else if(i==parameter && object[parameter]==value) {
+                    matches.push(object);
+                }
+            }
+            return matches;
+        }
+        var results = findObject("title", "Mr", people);
+        console.log(results);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
