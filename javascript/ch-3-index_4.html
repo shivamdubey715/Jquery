@@ -33,8 +33,10 @@
         function findObject(parameter, value, object){
             var matches = [];
             for(var i in object){
+                // console.log(typeof object[i]);
                 if(typeof object[i] == 'object'){
                     matches = matches.concat(findObject(parameter, value, object[i]));
+                    console.log(matches)
                 }
                 else if(i==parameter && object[parameter]==value) {
                     matches.push(object);
@@ -43,7 +45,7 @@
             return matches;
         }
         var results = findObject("title", "Mr", people);
-        console.log(results);
+        // console.log(results);
 
     </script>
 </head>
